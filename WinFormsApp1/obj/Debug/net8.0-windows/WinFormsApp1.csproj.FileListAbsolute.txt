@@ -17,3 +17,4 @@ D:\progs\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\ref\WinFormsApp1.dll
 D:\progs\WinFormsApp1\WinFormsApp1\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
 D:\progs\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.csproj.AssemblyReference.cache
 D:\progs\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.csproj.CopyComplete
+D:\progs\WinFormsApp1\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.sourcelink.json
