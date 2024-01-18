@@ -36,7 +36,7 @@ namespace WinFormsApp1
             {
                 Thread myThread = new(LoadJson);
                 myThread.Start();
-                await Task.Delay(1200);
+                await Task.Delay(500);
             }
         }
         private static HttpClient sharedClient = new()
@@ -48,8 +48,9 @@ namespace WinFormsApp1
             var rest = await sharedClient.GetAsync(sharedClient.BaseAddress);
             string json = rest.Content.ReadAsStringAsync().Result;
             LondonTime deserialized = JsonConvert.DeserializeObject<LondonTime>(json);
+            if (label1.Text != deserialized.datetime)
             label1.Invoke((Action)delegate { label1.Text = deserialized.datetime; });
-            Thread.Sleep(12000);
+            Thread.Sleep(5000);
             LoadJson();
         }
     }
