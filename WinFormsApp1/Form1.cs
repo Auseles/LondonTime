@@ -30,28 +30,65 @@ namespace WinFormsApp1
             public string utc_offset;
             public int week_number;
         }
-        public async void Form1_Load(object sender, EventArgs e)
+
+        public void Form1_Load(object sender, EventArgs e)
         {
-            for (int i = 1; i < 11; i++)
+            Start();
+        }
+        bool flag = true;
+        int cntRequest = 0;
+        public async void Start()
+        {
+            int delay = CheckTime();
+            cntRequest = 0;
+            while (flag)
             {
-                Thread myThread = new(LoadJson);
-                myThread.Start();
-                await Task.Delay(500);
+                for (int i = 1; i < 11; i++)
+                {
+                    Thread myThread = new(LoadJson);
+                    myThread.Start();
+                    await Task.Delay(delay);
+                }
             }
+        }
+        public int CheckTime()
+        {           
+            var datatime = DateTime.Now.ToString("ss,ffffff");
+            double time = double.Parse(datatime);
+            double diffTime = 60 - time;
+            double delay = Math.Floor(diffTime / (125-cntRequest) * 1000);
+            return Convert.ToInt32(delay);
         }
         private static HttpClient sharedClient = new()
         {
             BaseAddress = new Uri("http://worldtimeapi.org/api/timezone/Europe/London"),
         };
+        object locker = new();
         public async void LoadJson()
         {
-            var rest = await sharedClient.GetAsync(sharedClient.BaseAddress);
-            string json = rest.Content.ReadAsStringAsync().Result;
-            LondonTime deserialized = JsonConvert.DeserializeObject<LondonTime>(json);
-            if (label1.Text != deserialized.datetime)
-            label1.Invoke((Action)delegate { label1.Text = deserialized.datetime; });
-            Thread.Sleep(5000);
-            LoadJson();
+            if (cntRequest < 121)
+            {
+                lock (locker)
+                {
+                    try
+                    {
+                        var rest = sharedClient.GetAsync(sharedClient.BaseAddress).Result;
+                        string json = rest.Content.ReadAsStringAsync().Result;
+                        LondonTime deserialized = JsonConvert.DeserializeObject<LondonTime>(json);
+                        if (label1.Text != deserialized.datetime)
+                        {
+                            label1.Invoke((Action)delegate { label1.Text = deserialized.datetime; });
+                            label2.Invoke((Action)delegate { label2.Text = "Кол-во иттераций за минуту: " + cntRequest++.ToString(); });
+                        }
+                    }
+                    catch (HttpRequestException ex)
+                    {
+                        label1.Invoke((Action)delegate { "Ошибка соединения".ToString(); });
+                        Start();
+                    }
+                }
+            }
+            else { Thread.SpinWait(0); Start(); }
         }
     }
 }
