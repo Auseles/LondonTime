@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\progs\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1.csproj": {}
+    "D:\\progs\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1.csproj": {}
   },
   "projects": {
-    "D:\\progs\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1.csproj": {
+    "D:\\progs\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\progs\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1.csproj",
+        "projectUniqueName": "D:\\progs\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1.csproj",
         "projectName": "WinFormsApp1",
-        "projectPath": "D:\\progs\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1.csproj",
+        "projectPath": "D:\\progs\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1.csproj",
         "packagesPath": "C:\\Users\\Auseles\\.nuget\\packages\\",
-        "outputPath": "D:\\progs\\WinFormsApp1\\WinFormsApp1\\obj\\",
+        "outputPath": "D:\\progs\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Auseles\\AppData\\Roaming\\NuGet\\NuGet.Config",

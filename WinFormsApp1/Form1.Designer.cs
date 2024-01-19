@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             label1 = new Label();
+            label2 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -40,11 +41,21 @@
             label1.TabIndex = 0;
             label1.Text = "label1";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(28, 43);
+            label2.Name = "label2";
+            label2.Size = new Size(38, 15);
+            label2.TabIndex = 1;
+            label2.Text = "label2";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(221, 37);
+            ClientSize = new Size(221, 76);
+            Controls.Add(label2);
             Controls.Add(label1);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
@@ -57,5 +68,6 @@
         #endregion
 
         private Label label1;
+        private Label label2;
     }
 }

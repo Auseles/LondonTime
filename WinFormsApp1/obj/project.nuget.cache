@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "O7eKyJaZuBOVRLudxQDTVQBgyfL/U/KcXVWbrwZ1RRfHAZGnqWQJUhX0EjKAcS3cLAz+k9BpqoEKViiguvJgeQ==",
+  "dgSpecHash": "dQ/kv0nXgj4+eQGut55DQQEp4LO/4NOj2cvG+aGAMRw6mfKWmyDP1bGEgh2TbKcBdTOiGoOb9YzT5BrE3FBMhQ==",
   "success": true,
-  "projectFilePath": "D:\\progs\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1.csproj",
+  "projectFilePath": "D:\\progs\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Auseles\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
